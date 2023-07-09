@@ -1,0 +1,43 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+</div>
+
+<div class="container">
+  <h1>Транзакції</h1>
+</div>  
+
+<div class="container">
+  <table class="table table-light table-bordered table-hover">
+    <thead>
+      <tr class="table-info">
+        <th scope="col">Сума, грн</th>
+        <th scope="col">Час транзакції</th>
+        <th scope="col">Опис транзакції</th>
+        <th scope="col">Тип транзакції</th>
+        <th scope="col">Категорія транзакції</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @operations.each do |operation| %>
+        <tr>
+          <td><%= operation.amount %></td>
+          <td><%= operation.odate %></td>
+          <td><%= operation.description %></td>
+          <td><%= operation.cashflow %></td>
+          <td><%= operation.category.name %></td>
+          <td><%= link_to 'Редагувати', edit_operation_path(operation), class: "btn btn-info" %></td>
+          <td><%= link_to 'Видалити', operation, data: { 'turbo-method': :delete, 'turbo-confirm': 'Ви дійсно хочете видалити транзакцію?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+  <%= paginate @operations %>
+</div>
+
+<div class="container">
+  <%= link_to "Додати нову транзакцію", new_operation_path, class: "btn btn-success" %>
+</div>

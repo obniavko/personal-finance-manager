@@ -1,0 +1,14 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+</div>
+
+<div class="container">
+  <%= render @category %>
+</div>
+
+<div class="container">
+  <%= link_to "Редагувати", edit_category_path(@category), class: "btn btn-info" %>
+  <%= button_to "Видалити", @category, method: :delete, data: { confirm: 'Ви впевнені?' }, class: "btn btn-danger" %>
+  <%= link_to "Назад до списку категорій", categories_path, class: "btn btn-outline-info" %>
+</div>
+

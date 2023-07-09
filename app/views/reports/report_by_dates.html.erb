@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>
+    <%= "Динаміка по датах: #{params.dig(:operation, :cashflow)}" %>
+  </h1>
+</div>
+
+<div class="container">
+  <div>
+    <canvas id="myChart" width='400' heigth='400'></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    
+    <script>
+      const ctx = document.getElementById('myChart').getContext('2d');
+      const data = {
+      labels: <%= raw @dates %>,
+      datasets: [{
+        label: 'Динаміка по датах',
+        data: <%= @sums %>,
+        fill: false,
+        borderColor: 'rgb(13, 202, 240)',
+        tension: 0.1
+      }]
+    };
+
+    const config = {
+      type: 'line',
+      data: data,
+      plugins: [ChartDataLabels]
+    };
+
+    const myChart = new Chart(ctx, config);
+    </script>
+  </div>
+</div>

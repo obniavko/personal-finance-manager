@@ -1,0 +1,35 @@
+<div class="container">
+<p style="color: green"><%= notice %></p>
+
+<h1>Категорії витрат/доходів</h1>
+</div>
+
+<div class="container">
+<table class="table table-light table-bordered table-hover">
+  <thead>
+    <tr class="table-info">
+      <th scope="col">Назва категорії</th>
+      <th scope="col">Опис категорії</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= category.description %></td>
+        <td><%= link_to 'Редагувати', edit_category_path(category), class: "btn btn-info" %></td>
+        <td><%= link_to 'Видалити', category, data: { 'turbo-method': :delete, 'turbo-confirm': 'Ви дійсно хочете видалити категорію?' }, class: "btn btn-danger" %></td>
+      </tr>
+     <% end %>
+  </tbody>
+</table>
+</div>
+
+<div class="container">
+  <%= paginate @categories %>
+</div>
+
+<div class="container">
+  <%= link_to "Додати нову категорію", new_category_path, class: "btn btn-success" %>
+</div>

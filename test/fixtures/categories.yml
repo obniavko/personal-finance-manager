@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+food:
+  name: Продукти
+  description: Витрати на продукти
+
+clothes:
+  name: Одяг
+  description: Витрати на одяг
+
+healthcare:
+  name: Лікування
+  description: Витрати на лікування
+
+appliances:
+  name: Техніка
+  description: Витрати на техніку
+
+transport:
+  name: Транспорт
+  description: Витрати на транспорт
+
+pets:
+  name: Домашні тварини
+  description: Витрати на улюбленців
+
+entertainment:
+  name: Розваги
+  description: Витрати на розваги
+
+rent:
+  name: Оренда
+  description: Витрати на оренду
+
+other:
+  name: Інші витрати
+  description: Інше
+
+salary:
+  name: Заробітна плата
+  description: Доходи (заробітна плата)

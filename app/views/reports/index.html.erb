@@ -1,0 +1,26 @@
+<div class="container mt-4 p-5 bg-light text-black rounded">
+  <h1>Генератор звітів</h1>
+
+  <form action="reports/report_by_category" method="get">
+    <label for="start_date">Початок періоду</label>
+    <input type="date" id="start_date" name="start_date" required>
+    <br>
+    <br>
+    <label for="end_date">Кінець періоду</label>
+    <input type="date" id="end_date" name="end_date" required>
+    <br>
+    <br>
+    <label for="category_id">Категорія</label>
+    <%= select(:operation, :category_id, options_for_select(@categories)) %>
+    <br>
+    <br>
+    <label for="cashflow">Тип операції</label>
+    <%= select(:operation, :cashflow, options_for_select([["Доходи", "Доходи"], ["Витрати", "Витрати"]])) %>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-info">Звіт по доходам/витратам в розрізі категорій</button>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-info" formaction="reports/report_by_dates">Динаміка доходів/витрат по датах</button>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<div id="<%= dom_id operation %>">
+  <p>
+    <strong>Сума, грн:</strong>
+    <%= operation.amount %>
+  </p>
+
+  <p>
+    <strong>Час транзакції:</strong>
+    <%= operation.odate %>
+  </p>
+
+  <p>
+    <strong>Опис транзакції:</strong>
+    <%= operation.description %>
+  </p>
+
+  <p>
+    <strong>Доходи/витрати:</strong>
+    <%= operation.cashflow %>
+  </p>
+
+  <p>
+    <strong>Категорія транзакції:</strong>
+    <%= operation.category_id %>
+  </p>
+
+</div>

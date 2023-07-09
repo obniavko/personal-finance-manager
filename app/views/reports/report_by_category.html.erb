@@ -1,0 +1,79 @@
+<div class="container justify-content-center">
+  <h1>
+    <%= "Звіт в розрізі категорій: #{params.dig(:operation, :cashflow)}" %>
+  </h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <table class="table table-light table-bordered table-hover">
+        <thead>
+          <tr class="table-info">
+            <th scope="col">Категорія</th>
+            <th scope="col">Сума</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @table_data.each do |t| %>
+            <tr>
+              <td><%= t[0] %></td>
+              <td><%= t[1] %></td>
+            </tr>
+          <% end %>
+            <tr>
+              <td><strong>Всього:</strong></td>
+              <td><strong><%= @sums.sum %></strong></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-6">
+      <canvas id="myChart" width='400' heigth='400'></canvas>
+        
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        const data = {
+          labels: <%= raw @categories %>,
+          datasets: [{
+            label: 'Звіт в розрізі категорій',
+            data: <%= @sums %>,
+            hoverOffset: 4
+          }]
+        };
+
+        const options = {
+          plugins: {
+            datalabels: {
+              display: 'auto',
+              color: 'black',
+              font: {
+                weight: 'bold'
+              },
+              formatter: (value, ctx) => {
+                total = ctx.chart.getDatasetMeta(0).total;
+                percentage = (value * 100 / total).toFixed(2) + "%";
+                return percentage + '\n' + '(' + value + ')';
+              },
+            }
+          }
+        }
+
+        const config = {
+        type: 'pie',
+        data: data,
+        plugins: [ChartDataLabels],
+        options
+        };
+
+        const myChart = new Chart(ctx, config);
+       </script>
+     </div>
+  </div>
+</div>

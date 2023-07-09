@@ -1,0 +1,162 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+salary1:
+  amount: 10000
+  odate: 2023-06-01 09:38:36
+  description: MyString
+  category: salary
+  cashflow: Доходи
+  
+rent1:
+  amount: 5000
+  odate: 2023-06-01 14:30:44
+  description: MyString
+  category: rent
+  cashflow: Витрати
+
+food1:
+  amount: 700
+  odate: 2023-06-1 19:10:56
+  description: MyString
+  category: food
+  cashflow: Витрати
+
+transport1:
+  amount: 100
+  odate: 2023-06-02 07:30:00
+  description: MyString
+  category: transport
+  cashflow: Витрати
+
+other1:
+  amount: 150
+  odate: 2023-06-3 08:12:32
+  description: MyString
+  category: other
+  cashflow: Витрати
+  
+food2:
+  amount: 890
+  odate: 2023-06-3 17:28:40
+  description: MyString
+  category: food
+  cashflow: Витрати
+
+clothes:
+  amount: 1250
+  odate: 2023-06-3 17:55:42
+  description: MyString
+  category: clothes
+  cashflow: Витрати
+
+pets1:
+  amount: 200
+  odate: 2023-06-4 17:28:40
+  description: MyString
+  category: pets
+  cashflow: Витрати
+
+food3:
+  amount: 510
+  odate: 2023-06-6 18:10:21
+  description: MyString
+  category: food
+  cashflow: Витрати
+
+transport2:
+  amount: 100
+  odate: 2023-06-07 07:30:00
+  description: MyString
+  category: transport
+  cashflow: Витрати
+
+other2:
+  amount: 50
+  odate: 2023-06-8 15:23:32
+  description: MyString
+  category: other
+  cashflow: Витрати
+
+food4:
+  amount: 600
+  odate: 2023-06-8 17:15:22
+  description: MyString
+  category: food
+  cashflow: Витрати
+
+healthcare1:
+  amount: 250
+  odate: 2023-06-8 17:20:22
+  description: MyString
+  category: healthcare
+  cashflow: Витрати
+
+food5:
+  amount: 520
+  odate: 2023-06-10 20:17:28
+  description: MyString
+  category: food
+  cashflow: Витрати
+
+food6:
+  amount: 630
+  odate: 2023-06-14 19:24:23
+  description: MyString
+  category: food
+  cashflow: Витрати
+
+salary2:
+  amount: 10000
+  odate: 2023-06-15 18:42:22
+  description: MyString
+  category: salary
+  cashflow: Доходи
+
+appliances1:
+  amount: 2000
+  odate: 2023-06-15 19:00:00
+  description: MyString
+  category: appliances
+  cashflow: Витрати
+
+entertainment1:
+  amount: 900
+  odate: 2023-06-15 20:58:00
+  description: MyString
+  category: entertainment
+  cashflow: Витрати
+  
+food7:
+  amount: 705
+  odate: 2023-06-15 17:56:26
+  description: MyString
+  category: food
+  cashflow: Витрати
+
+healthcare2:
+  amount: 320
+  odate: 2023-06-15 19:22:21
+  description: MyString
+  category: healthcare
+  cashflow: Витрати
+
+food8:
+  amount: 815
+  odate: 2023-06-16 17:36:43
+  description: MyString
+  category: food
+  cashflow: Витрати
+
+food9:
+  amount: 545
+  odate: 2023-06-17 19:20:11
+  description: MyString
+  category: food
+  cashflow: Витрати
+
+food10:
+  amount: 670
+  odate: 2023-06-18 18:40:24
+  description: MyString
+  category: food
+  cashflow: Витрати

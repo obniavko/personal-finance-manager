@@ -1,0 +1,44 @@
+<div class="container">
+  <%= form_with(model: operation) do |form| %>
+    <% if operation.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(operation.errors.count, "error") %> prohibited this operation from being saved:</h2>
+
+        <ul>
+          <% operation.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.label :amount, "Сума", style: "display: block" %>
+      <%= form.number_field :amount %>
+    </div>
+
+    <div>
+      <%= form.label :odate, "Дата", style: "display: block" %>
+      <%= form.datetime_field :odate %>
+    </div>
+
+    <div>
+      <%= form.label :description, "Опис", style: "display: block" %>
+      <%= form.text_field :description %>
+    </div>
+    
+    <div>
+    <%= form.label :cashflow, "Тип операції", style: "display: block" %>
+      <%= form.select(:cashflow, options_for_select([["Доходи", "Доходи"], ["Витрати", "Витрати"]])) %>
+    </div>
+
+    <div>
+      <%= form.label :category_id, "Категорія", style: "display: block" %>
+      <%= select(:operation, :category_id, options_for_select(@categories)) %>
+    </div><br><br>
+
+    <div>
+      <%= form.submit class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>
